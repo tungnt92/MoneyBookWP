@@ -1,0 +1,1 @@
+E:\AppProject\MoneyBookWP\MoneyBookWP\MoneyBookWP.csproj;arm

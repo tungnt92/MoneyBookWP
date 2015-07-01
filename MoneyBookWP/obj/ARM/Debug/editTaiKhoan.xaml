@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="MoneyBookWP.editTaiKhoan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MoneyBookWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/07.jpg"/>
+        </Grid.Background>
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="MONEY BOOK" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Sửa tài khoản" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tentaikhoan" Header="Tên tài khoản" HorizontalAlignment="Left" Grid.Row="0" TextWrapping="Wrap" Margin="7, 0, 0, 0" VerticalAlignment="Top" Width="342"/>
+            <ComboBox x:Name="loaitaikhoan" Header="Loại tài khoản" Grid.Row="1" Margin="10, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="342">
+                <ComboBoxItem Content="Tiền mặt" Tag="Tiền mặt"/>
+                <ComboBoxItem Content="Tài khoàn ngân hàng" Tag="Tài khoàn ngân hàng" />
+                <ComboBoxItem Content="Thẻ tín dụng" Tag="Thẻ tín dụng"/>
+                <ComboBoxItem Content="Tài khoản tiết kiệm" Tag="Tài khoản tiết kiệm"/>
+                <ComboBoxItem Content="Khác" Tag="Khác"/>
+            </ComboBox>
+            <ComboBox x:Name="loaitiente" Header="Loại tiền tệ" Grid.Row="2" Margin="7, 0, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="342">
+                <ComboBoxItem Content="VND" Tag="VND"/>
+                <ComboBoxItem Content="EUR" Tag="EUR" />
+                <ComboBoxItem Content="USD" Tag="USD"/>
+                <ComboBoxItem Content="GBP" Tag="GBP"/>
+                <ComboBoxItem Content="KRW" Tag="KRW"/>
+            </ComboBox>
+            <TextBox x:Name="sotienbandau" InputScope="Number" Margin="7, 0, 0, 0" Header="Số tiền ban đầu" Grid.Row="3" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+            <TextBox x:Name="ghichu" Margin="7, 0, 0, 0" Header="Ghi chú" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Height="117" Width="342"/>
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='1' x:Name="edittaikhoan" Icon="Save" Label="lưu"                            />
+                <AppBarButton x:ConnectionId='2' x:Name="deletetaikhoan" Icon="Delete" Label="xóa"                              />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+

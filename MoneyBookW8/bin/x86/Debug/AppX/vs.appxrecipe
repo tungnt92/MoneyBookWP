@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>TUNGNGUYEN</Machine>
+    <WindowsUser>Tung</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>a82357e9-9c7a-45fe-980c-64ea1b4a0a9a</PackageIdentityName>
+    <IntermediateOutputPath>E:\AppProject\MoneyBookWP\MoneyBookW8\obj\x86\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>4AAD9A8509B3639B4229DC36231301FF85F9F40763CBD1DC8BEF67288F60F3CD</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>a82357e9-9c7a-45fe-980c-64ea1b4a0a9a_1.0.0.0_x86__zyn2a5zj7qk7a</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>a82357e9-9c7a-45fe-980c-64ea1b4a0a9a_zyn2a5zj7qk7a!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>a82357e9-9c7a-45fe-980c-64ea1b4a0a9a</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Tung</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-06-16T02:29:39.668</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\MoneyBookW8.exe">
+      <PackagePath>MoneyBookW8.exe</PackagePath>
+      <Modified>2015-06-16T02:29:38.910</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\DataModel\SampleData.json">
+      <PackagePath>DataModel\SampleData.json</PackagePath>
+      <Modified>2015-06-16T02:22:25.321</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\LightGray.png">
+      <PackagePath>Assets\LightGray.png</PackagePath>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\MediumGray.png">
+      <PackagePath>Assets\MediumGray.png</PackagePath>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\Assets\DarkGray.png">
+      <PackagePath>Assets\DarkGray.png</PackagePath>
+      <Modified>2015-04-02T10:59:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\MoneyBookW8.xr.xml">
+      <PackagePath>MoneyBookW8.xr.xml</PackagePath>
+      <Modified>2015-06-16T02:29:38.556</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-06-16T02:29:38.633</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\GroupedItemsPage.xbf">
+      <PackagePath>GroupedItemsPage.xbf</PackagePath>
+      <Modified>2015-06-16T02:29:38.637</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\GroupDetailPage.xbf">
+      <PackagePath>GroupDetailPage.xbf</PackagePath>
+      <Modified>2015-06-16T02:29:38.641</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\ItemDetailPage.xbf">
+      <PackagePath>ItemDetailPage.xbf</PackagePath>
+      <Modified>2015-06-16T02:29:38.645</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\AppProject\MoneyBookWP\MoneyBookW8\bin\x86\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-06-16T02:29:39.256</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

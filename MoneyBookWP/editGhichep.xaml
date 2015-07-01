@@ -1,0 +1,72 @@
+﻿<Page
+    x:Class="MoneyBookWP.editGhichep"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MoneyBookWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/07.jpg"/>
+        </Grid.Background>
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="MONEY BOOK" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Sửa ghi chép" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ComboBox Grid.Row="0" x:Name="loai" Header="Loại" HorizontalAlignment="Left" Margin="7,0,0,0" VerticalAlignment="Top" Width="342">
+                <ComboBoxItem Tag="Chi Tiền" Content="Chi Tiền"/>
+                <ComboBoxItem Tag="Thu Tiền" Content="Thu Tiền" />
+            </ComboBox>
+            <ComboBox Grid.Row="1" x:Name="tutaikhoan" Header="Từ tài khoản" HorizontalAlignment="Left" Margin="7,0,0,0" VerticalAlignment="Top" Width="342">
+            </ComboBox>
+            <TextBox Grid.Row="2" x:Name="sotien" InputScope="Number" Header="Số tiền" HorizontalAlignment="Left" Margin="7,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+            <TextBox x:Name="mucdichchi" Header="Mục đích chi" HorizontalAlignment="Left" Margin="7,0,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker x:Name="ngay" Header="Ngày" HorizontalAlignment="Left" Margin="7,0,0,0" Grid.Column="0" VerticalAlignment="Top" Width="165"/>
+
+                <TimePicker x:Name="gio" Header="Giờ" Margin="10,0,0,0" HorizontalAlignment="Right" Grid.Column="1" VerticalAlignment="Top" Width="165"/>
+            </Grid>
+            <TextBox x:Name="ghichu" Header="Ghi chú" HorizontalAlignment="Left" Margin="7,0,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Height="135" Width="342"/>
+
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="editGhichepIcon" Icon="Save" Label="Lưu" Click="editGhichepIcon_Click"/>
+                <AppBarButton x:Name="deleteGhichepIcon" Icon="Delete" Label="xóa" Click="deleteGhichepIcon_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

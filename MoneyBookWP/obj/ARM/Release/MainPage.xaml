@@ -1,0 +1,145 @@
+﻿<Page
+    x:Class="MoneyBookWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MoneyBookWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:converter="using:MoneyBookWP.Converters"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <converter:convertString x:Key="convertString"/>
+        <converter:RandomColorConverter x:Key="randomColor"/>
+        <CollectionViewSource x:Name="cvsGhiChepList" IsSourceGrouped="True"/>
+    </Page.Resources>
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True"/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:ConnectionId='1' x:Name="themtaisanIcon" Icon="Add" Label="thêm"                             />
+                <AppBarButton x:ConnectionId='2' Visibility="Collapsed" x:Name="themghichuIcon" Icon="Add" Label="thêm"                              />
+            </CommandBar.PrimaryCommands>
+
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:ConnectionId='3' Name="introApp" Icon="Setting" Label="Giới thiệu"                       />
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/01.jpg"/>
+        </Grid.Background>
+        <TextBlock x:Name="tongsodutaikhoan" HorizontalAlignment="Left" Margin="30,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="360" FontSize="30"/>
+        <Pivot x:ConnectionId='4' x:Uid="Pivot" Title="MONEY BOOK" x:Name="pivot" CommonNavigationTransitionInfo.IsStaggerElement="True"                                          >
+            <PivotItem
+                x:Uid="PivotItem1"
+                Margin="19,66,0,-0.5"
+                Header="Tài khoản"
+                CommonNavigationTransitionInfo.IsStaggerElement="True" >
+
+                <!--Double line list with text wrapping-->
+                <ListView x:ConnectionId='6' Name="taikhoanList"
+                    IsItemClickEnabled="True"                                   
+                    ContinuumNavigationTransitionInfo.ExitElementContainer="True" Margin="0,-21,9.833,0.667">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,9.5" Width="750" Background="{Binding Converter={StaticResource randomColor}}">
+                                <Grid Grid.Row="1" Margin="10,9.5,19,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Pivot.SlideInAnimationGroup="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"/>
+                                            <ColumnDefinition Width="230"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Tài khoản:" FontSize="25"/>
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Tentaikhoan}" FontSize="25"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Pivot.SlideInAnimationGroup="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"/>
+                                            <ColumnDefinition Width="230"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Số dư:" FontSize="25" Pivot.SlideInAnimationGroup="1"/>
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Sotienbandau, Converter={StaticResource convertString}}" FontSize="25"/>
+                                    </Grid>
+                                </Grid>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Name="ghichepListpv"
+                x:Uid="PivotItem2"
+                Margin="19,14.5,0,0"
+                Header="Thu chi">
+                
+                <!--Double line list no text wrapping-->
+                <ListView x:ConnectionId='5' IsItemClickEnabled="True" x:Name="ghichepList" ItemsSource="{Binding  Source={StaticResource cvsGhiChepList}}" ContinuumNavigationTransitionInfo.ExitElementContainer="True"                                   Margin="0,0,9.833,0.333">
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBox IsHitTestVisible="False"
+                        Text="{Binding Key}" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,9.5" Background="{Binding Converter={StaticResource randomColor}}" Width="750">
+                                <Grid Grid.Row="1" Margin="10,9.5,19,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0" Pivot.SlideInAnimationGroup="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"/>
+                                            <ColumnDefinition Width="230"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="{Binding Loai}" FontSize="25"/>
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Mucdichchi}" FontSize="25"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Pivot.SlideInAnimationGroup="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"/>
+                                            <ColumnDefinition Width="230"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Số tiền:" FontSize="25"/>
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Sotien, Converter={StaticResource convertString}}" FontSize="25"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Pivot.SlideInAnimationGroup="3">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"/>
+                                            <ColumnDefinition Width="230"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Text="Tài khoản:" FontSize="25"/>
+                                        <TextBlock Grid.Column="1" TextAlignment="Right" Text="{Binding Tutaikhoan}" FontSize="25"/>
+                                    </Grid>
+                                </Grid>
+                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
+
